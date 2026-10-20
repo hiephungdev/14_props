@@ -7,6 +7,7 @@ import MainContent from "./conponents/MainContent/MainContent.jsx";
 // vì bạn có thể thay đổi dữ liệu mà component nhận được mà không cần phải thay đổi chính component đó.
 
 import Header from "./conponents/Header/Headers.jsx";
+import TabButton from "./conponents/MainContent/TabButton.jsx";
 
 // function MainContent(props) {
 //   return (
@@ -114,6 +115,13 @@ function App() {
             <MainContent {...myData[1]} />
             <MainContent {...myData[2]} />
           </ul>
+        </section>
+
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton batKiTenNao={"Chan đê"}>Components</TabButton>
+          </menu>
         </section>
       </main>
     </>
