@@ -1,24 +1,12 @@
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
 import "./App.css";
 import { myData } from "../data.js";
+import MainContent from "./conponents/MainContent/MainContent.jsx";
 
 // thực hiện học và nghiên cứu về props
 // props là một cách để truyền dữ liệu từ component cha sang component con trong React. Chúng cho phép bạn tạo ra các component linh hoạt và tái sử dụng được,
 // vì bạn có thể thay đổi dữ liệu mà component nhận được mà không cần phải thay đổi chính component đó.
 
-function Header() {
-  return (
-    <header>
-      <h1>Welcome to Vite + React</h1>
-      <div className="logo">
-        <img src={viteLogo} alt="Vite logo" />
-        <img src={reactLogo} alt="React logo" />
-      </div>
-      <h1>Vite + React</h1>
-    </header>
-  );
-}
+import Header from "./conponents/Header/Headers.jsx";
 
 // function MainContent(props) {
 //   return (
@@ -31,17 +19,6 @@ function Header() {
 // }
 
 // sử dụng destructuring để lấy dữ liệu từ props
-function MainContent({ image, alt, title, description }) {
-  return (
-    <>
-    <li>
-      <img src={image} alt={alt} />
-      <h2>{title}</h2>
-      <p>{description}</p>
-      </li>
-    </>
-  );
-}
 
 // các tối ứu hóa code hơn
 
