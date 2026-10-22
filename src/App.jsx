@@ -8,6 +8,8 @@ import MainContent from "./conponents/MainContent/MainContent.jsx";
 
 import Header from "./conponents/Header/Headers.jsx";
 import TabButton from "./conponents/MainContent/TabButton.jsx";
+import HelloButton from "./conponents/MainContent/HelloButton.jsx";
+import { useState } from "react";
 
 // function MainContent(props) {
 //   return (
@@ -24,6 +26,7 @@ import TabButton from "./conponents/MainContent/TabButton.jsx";
 // các tối ứu hóa code hơn
 
 function App() {
+  const [selectedTab, setSelectedTab] = useState("trang-chu");
   return (
     <>
       <Header />
@@ -120,8 +123,47 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton batKiTenNao={"Chan đê"}>Components</TabButton>
+            <TabButton
+              title="Trang chủ"
+              isSelect={selectedTab === "trang-chu"}
+              onSeLect={() => setSelectedTab("trang-chu")}
+            />
+            <TabButton
+              title="Sản phẩm"
+              isSelect={selectedTab === "san-pham"}
+              onSeLect={() => setSelectedTab("san-pham")}
+            />
+            <TabButton
+              title="Liên hệ"
+              isSelect={selectedTab === "lien-he"}
+              onSeLect={() => setSelectedTab("lien-he")}
+            />
+            <HelloButton />
           </menu>
+          {selectedTab === "trang-chu" && (
+            <div>
+              <h3>Giới thiệu</h3>
+              <p>Chào mừng bạn đến với trang học lập trình.</p>
+            </div>
+          )}
+
+          {selectedTab === "san-pham" && (
+            <div>
+              <h3>Khóa học</h3>
+              <ul>
+                <li>React cơ bản</li>
+                <li>JavaScript nâng cao</li>
+                <li>Thiết kế giao diện web</li>
+              </ul>
+            </div>
+          )}
+
+          {selectedTab === "lien-he" && (
+            <div>
+              <h3>Liên hệ</h3>
+              <p>Email: hello@example.com</p>
+            </div>
+          )}
         </section>
       </main>
     </>

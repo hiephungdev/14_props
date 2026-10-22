@@ -10,10 +10,31 @@
 //     );
 // }
 
-export default function TabButton({ batKiTenNao }) {
+// const btn = document.querySelector("button");
+// btn.addEventListener("click", () => {
+
+// })
+
+
+export default function TabButton({ title , isSelect , onSeLect }) {
+
+    // function handelClick() {
+    //     alert(message);
+    // }
+
+    // return (
+    //     <>
+    //         <li><button onClick={handelClick}>{title}</button></li>
+    //     </>
+    // );
+
     return (
-        <>
-            <li><button>{batKiTenNao}</button></li>
-        </>
-    );
+        <li>
+            <button className={isSelect ? "actived" : ""}
+                    onClick={onSeLect}
+            >
+                {title}
+            </button>
+        </li>
+    )
 }
